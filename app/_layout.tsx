@@ -1,14 +1,17 @@
 import { Stack } from "expo-router";
 import { SplashScreenController } from '../components/SplashScreenController';
 import { SessionProvider, useSession } from '../contexts/AuthContext';
+import { GameProvider } from '../contexts/GameContext';
 import { ThemeProvider } from '../contexts/ThemeContext';
 
 export default function RootLayout() {
   return (
     <ThemeProvider>
       <SessionProvider>
-        <SplashScreenController />
-        <RootNavigator />
+        <GameProvider>
+          <SplashScreenController />
+          <RootNavigator />
+        </GameProvider>
       </SessionProvider>
     </ThemeProvider>
   );

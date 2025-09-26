@@ -37,26 +37,21 @@ function CustomDrawerContent(props: any) {
       <View style={styles.topSection}>
         <Text style={styles.drawerTitle}>Menu</Text>
 
-        <TouchableOpacity
-          style={styles.drawerItem}
-          onPress={() => navigateToScreen('index')}
-        >
+        <TouchableOpacity style={styles.drawerItem} onPress={() => navigateToScreen('index')}>
           <Text style={styles.drawerItemText}>🏠 Home</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity
-          style={styles.drawerItem}
-          onPress={() => navigateToScreen('settings')}
-        >
+        <TouchableOpacity style={styles.drawerItem} onPress={() => navigateToScreen('progress')}>
+          <Text style={styles.drawerItemText}>📊 Progress</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.drawerItem} onPress={() => navigateToScreen('settings')}>
           <Text style={styles.drawerItemText}>⚙️ Settings</Text>
         </TouchableOpacity>
       </View>
 
       <View style={styles.bottomSection}>
-        <TouchableOpacity
-          style={[styles.drawerItem, styles.logoutItem]}
-          onPress={handleLogout}
-        >
+        <TouchableOpacity style={[styles.drawerItem, styles.logoutItem]} onPress={handleLogout}>
           <Text style={[styles.drawerItemText, styles.logoutText]}>🚪 Logout</Text>
         </TouchableOpacity>
 
@@ -84,6 +79,8 @@ export default function DrawerLayout() {
           backgroundColor: isDark ? '#1c1c1e' : '#ffffff',
         },
         headerTintColor: isDark ? '#ffffff' : '#000000',
+        headerShown: true,
+        swipeEnabled: true,
       }}
     >
       <Drawer.Screen
@@ -91,6 +88,23 @@ export default function DrawerLayout() {
         options={{
           drawerLabel: 'Home',
           title: 'Home',
+          headerShown: true,
+        }}
+      />
+      <Drawer.Screen
+        name='game'
+        options={{
+          drawerLabel: 'Game',
+          title: 'Memory Game',
+          headerShown: true,
+        }}
+      />
+      <Drawer.Screen
+        name='progress'
+        options={{
+          drawerLabel: 'Progress',
+          title: 'Progress',
+          headerShown: true,
         }}
       />
       <Drawer.Screen
@@ -98,6 +112,7 @@ export default function DrawerLayout() {
         options={{
           drawerLabel: 'Settings',
           title: 'Settings',
+          headerShown: true,
         }}
       />
     </Drawer>
