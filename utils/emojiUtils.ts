@@ -42,7 +42,7 @@ export function getEmojisFromCategory(category: string, count: number, levelNumb
         }
         
         if (emojis.length >= count) {
-          console.log(`✅ Level ${levelNumber || 'unknown'} using emoji-mart emojis from ${category}:`, emojis.slice(0, count));
+          // console.log(`✅ Level ${levelNumber || 'unknown'} using emoji-mart emojis from ${category}:`, emojis.slice(0, count));
           return shuffleArray(emojis).slice(0, count);
         }
       }

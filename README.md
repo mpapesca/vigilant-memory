@@ -373,6 +373,28 @@ bun install emoji-mart # Add emoji dependencies
 - [ ] **📷 Screenshot Sharing**: Capture and share completed level grids
 - [ ] **🌍 Localization**: Multi-language support for global audience
 
+## 🚀 Deployment
+
+### Building for Production
+
+This project uses **Expo Application Services (EAS)** for building and deploying to app stores:
+
+```bash
+# Install EAS CLI globally (one-time setup)
+bun add -g eas-cli
+
+# Login to your Expo account
+eas login
+
+# Initialize EAS for the project
+eas init
+
+# Build for app stores
+eas build --profile production --platform all
+```
+
+For comprehensive deployment guidance, refer to the official [EAS Build Documentation](https://docs.expo.dev/build/introduction/).
+
 ## 🤝 Contributing
 
 We love contributions! Here's how to get started:
